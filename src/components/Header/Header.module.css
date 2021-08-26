@@ -1,0 +1,29 @@
+.container {
+    border: solid black 1px;
+    background-color: #ffb400;
+}
+
+.navContainer {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 40px;
+}
+
+.navContainer li {
+    padding: 10px;
+}
+
+.navContainer li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+.navContainer li a:hover {
+    color: cornflowerblue;
+}
+
+.navContainer li a.active {
+    color: black;
+}

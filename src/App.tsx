@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Header} from './components/Header/Header';
+import {Container} from '@material-ui/core';
+import {Route} from 'react-router-dom';
+import {Login} from './components/Login/Login';
+import {Profile} from './components/Profile/Profile';
+import {Info} from './components/Info/Info';
+
+export const PATH = {
+    HOME: '/',
+    LOGIN: '/login',
+    PROFILE: '/profile',
+    INFO: '/info',
+}
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Container maxWidth="lg" className="App">
+            <Header/>
+            <div>
+                <Route exact path={PATH.HOME} render={()=><div>Home</div>}/>
+                <Route path={PATH.LOGIN} render={()=><Login/>}/>
+                <Route path={PATH.PROFILE} render={()=><Profile/>}/>
+                <Route path={PATH.INFO} render={()=><Info/>}/>
+            </div>
+        </Container>
+    );
 }
 
 export default App;
