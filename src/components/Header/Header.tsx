@@ -9,9 +9,9 @@ export const Header = () => {
             <nav>
                 <ul className={cls.navContainer}>
                     <li><NavLink replace exact to={PATH.HOME} activeClassName={cls.active}>Home</NavLink></li>
-                    <li><NavLink exact to={PATH.INFO} activeClassName={cls.active}>Info</NavLink></li>
-                    <li><NavLink exact to={PATH.PROFILE} activeClassName={cls.active}>Profile</NavLink></li>
-                    <li><NavLink exact to={PATH.LOGIN} activeClassName={cls.active}>Login</NavLink></li>
+                    <li><NavLink replace exact to={PATH.INFO} activeClassName={cls.active}>Info</NavLink></li>
+                    <li><NavLink replace exact to={PATH.PROFILE} activeClassName={cls.active}>Profile</NavLink></li>
+                    <li><NavLink replace exact to={PATH.LOGIN} activeClassName={cls.active}>Login</NavLink></li>
                 </ul>
             </nav>
         </header>

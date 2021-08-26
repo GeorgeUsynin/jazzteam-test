@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import {Header} from './components/Header/Header';
-import {Container} from '@material-ui/core';
 import {Route} from 'react-router-dom';
 import {Login} from './components/Login/Login';
 import {Profile} from './components/Profile/Profile';
@@ -17,15 +16,15 @@ export const PATH = {
 
 function App() {
     return (
-        <Container maxWidth="lg" className="App">
+        <div className="App">
             <Header/>
-            <div>
+            <div className="MainContainer">
                 <Route exact path={PATH.HOME} render={()=><div>Home</div>}/>
                 <Route path={PATH.LOGIN} render={()=><Login/>}/>
                 <Route path={PATH.PROFILE} render={()=><Profile/>}/>
                 <Route path={PATH.INFO} render={()=><Info/>}/>
             </div>
-        </Container>
+        </div>
     );
 }
 
