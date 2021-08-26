@@ -1,0 +1,21 @@
+.profileContainer{
+    display: flex;
+}
+
+.imgContainer img{
+    padding: 40px;
+    width: 200px;
+}
+
+.aboutContainer{
+    padding: 40px 40px 40px 0;
+}
+
+.aboutContainer p{
+    font-size: 16px;
+    color: white;
+}
+
+.aboutContainer p:first-child{
+    margin-top: 0;
+}
