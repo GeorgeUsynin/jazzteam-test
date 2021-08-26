@@ -1,5 +1,4 @@
 .container {
-    border: solid black 1px;
     background-color: #ffb400;
 }
 
@@ -26,4 +25,21 @@
 
 .navContainer li a.active {
     color: black;
+}
+
+.navWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userNameGreeting{
+    padding: 0 40px;
+    font-size: 20px;
+    color: white;
+}
+
+.userNameGreeting span{
+    color: #222222;
+    font-style: italic;
 }

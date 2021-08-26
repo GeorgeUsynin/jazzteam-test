@@ -2,9 +2,10 @@ import React, {ChangeEvent, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from '../../bll/store';
 import {setAuthError, setIsAuth} from '../../bll/authReducer';
-import {useHistory} from 'react-router-dom';
+import {Redirect, useHistory} from 'react-router-dom';
 import {PATH} from '../../App';
 import cls from './Login.module.css'
+import {getUserName} from '../../bll/profileReducer';
 
 export const Login = () => {
 
@@ -13,6 +14,7 @@ export const Login = () => {
     const history = useHistory()
 
     const authError = useSelector<AppRootStateType, null | string>(state => state.auth.error)
+    const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
 
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
@@ -29,8 +31,15 @@ export const Login = () => {
             dispatch(setAuthError('The user name or password is entered incorrectly'))
         } else {
             dispatch(setIsAuth(true))
+            dispatch(getUserName(userName))
             history.push(PATH.PROFILE)
+            setUserName('')
+            setPassword('')
         }
+    }
+
+    if (isAuth) {
+        return <Redirect to={PATH.PROFILE}/>
     }
 
     return (
